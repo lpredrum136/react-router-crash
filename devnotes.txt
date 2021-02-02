@@ -1,0 +1,96 @@
+1. GIOI THIEU
+khong con dieu khien bang a href nua 
+single page app 
+client-side routing
+xem them video
+
+2. CAI DAT
+npx create-react-app my-react-router 
+cd my-react-router
+npm i react-router-dom
+package.json
+
+3. CHAY THU
+npm start de thu 
+
+4. SETUP 
+- Tao components
+- Tao Navigation.js chi co const Navigation = () => <h1>Navbar</h1>
+- App.js: Xoa het cai o giua di
+- Dua vao App.js: const App = () => <Navigation />
+
+5. THAY DOI NAVIGATION.js
+const Navigation = () => <nav>
+  <h3>Logo</h3>
+  <ul>
+    <li>Home</li>
+    <li>Products</li>
+    <li>About</li>
+  </ul>
+</nav>
+
+6. APP.CSS
+Them nav va nav-link vao 
+Them App.css vao Navigation.js
+Them class nav-link cho ul trong Navigation.js
+
+7. TAO FILE HOME.JS 
+Va dua vao App.js
+
+7. THONG THUONG:
+- Navigation.js:
+  + a href='/'
+  + a href='/products'
+  + a href='/about'
+  + them navLinkStyle:
+
+    <a href='/products' style={navLinkStyle}>
+            Products
+          </a>
+- Tao file Products.js
+- Cu nghi rang no se chay toi Products.js nhung khong 
+- A the thi co the la tai vi chua import vao App
+- Nhung import vao App thi no hien ra ngay tu dau 
+
+8. NHU VAY PHAI DUNG REACT ROUTER: App.js
+- App.js
+  Goi <Router>everything</Router>
+
+- Chua co Switch: 
+  <Router>
+    <Navigation />
+    <Route path='/' component={Home} />
+    <Route path='/products' component={Products} />
+  </Router>
+  +
+- Luc nay Home '/' OK 
+- Nhung vao Products thi van hien ra Homepage la sao?
+  + Vi /products bao ham ca '/'
+- Vay phai dung exact path cho '/'
+
+9. VAN DE VOI NO SWITCH: App.js
+- <Route path='/:id' component={About} />
+  + Vao products van thay about 
+  + Vao asdf van thay about
+  + Tai vi no chay tu tren xuong duoi 
+  + Ke ca them 2x exact path vao products va :id cung k duoc
+- The nen co cai goi la Switch:
+  + Chay tu tren xuong duoi, ok thi cat luon
+  + Duong nhien la abc van ra about, nen chuyen tu :id thanh about
+- The bay gio user di toi /abc thi sao:
+  + Route component={Error}
+
+10. LINK 
+- Bam vao moi link a href:
+  + Network co rat nhieu request
+  + Moi lan vay lai phai load lai nhung thu y het, mot dong file js
+  + Giong nhu ban khoi dong lai React App cua ban vay 
+
+- Dung Link:
+  + Single Page App: Tuc la load het tat ca cac view roi 
+  + Gio React chi quan sat URL va render cho phu hop 
+  + K con thay load & request nua 
+  + Muot hon han 
+
+- Bay gio bam vao /products thi se thay URL thay doi, chung to no co di toi product 
+- Nhung network khong co gi, chung to no khong gui request
